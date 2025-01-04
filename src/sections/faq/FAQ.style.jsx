@@ -65,35 +65,104 @@ const FAQWrapper = styled.div`
     border-radius: 10px;
     transition: all 0.3s ease;
     position: relative; /* For positioning elements */
+    --spread: 80;
+    --blur: 12;
 
-    // &:before {
-    //   content: "";
-    //   position: absolute;
-    //   top: -1px;
-    //   bottom: -1px;
-    //   right: -1px;
-    //   left: -1px;
-    //   z-index: -1;
-    //   margin: 0px; /* !importanté */
-    //   border-radius: inherit; /* !importanté */
-    //   background: linear-gradient(103.16deg, #e43292 0%, #6635df 100%);
-    // }
+    &::before {
+      position: absolute;
+      inset: 0;
+      border: 2px solid transparent;
+      content: "";
+      pointer-events: none;
+      background: #84738c;
+      background-attachment: fixed;
+      border-radius: 12px;
+      -webkit-mask: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        conic-gradient(
+          from
+            calc(
+              (var(--start) + var(--spread) * 0.25 - var(--spread) * 1.5) * 1deg
+            ),
+          rgba(255, 255, 255, 0.1490196078) 0deg,
+          white,
+          rgba(255, 255, 255, 0.1490196078) calc(var(--spread) * 2.5deg)
+        );
+      mask: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        conic-gradient(
+          from
+            calc(
+              (var(--start) + var(--spread) * 0.25 - var(--spread) * 1.5) * 1deg
+            ),
+          rgba(255, 255, 255, 0.1490196078) 0deg,
+          white,
+          rgba(255, 255, 255, 0.1490196078) calc(var(--spread) * 2.5deg)
+        );
+      -webkit-mask-clip: padding-box, border-box;
+      mask-clip: padding-box, border-box;
+      -webkit-mask-composite: source-in, xor;
+      mask-composite: intersect;
+      opacity: var(--active);
+      transition: opacity 1s;
+    }
 
-    &:hover {
-      border: 1px solid;
-      border-color: #6c5ce7; /* Highlight border color */
-      outline: none; /* Remove default outline */
-      animation: faq-pulse 0.5s infinite alternate;
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &::after {
+      background-size: 100%;
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      background: conic-gradient(
+        from 180deg at 50% 70%,
+        #f626af 0deg,
+        #8228ec 72.0000010729deg,
+        #f626af 144.0000021458deg,
+        #0025ba 216.0000085831deg,
+        #f626af 288.0000042915deg,
+        #fafafa 1turn
+      );
+      background-attachment: fixed;
+      border-radius: 12px;
+      opacity: var(--active, 0);
+      transition: opacity 1s;
+      alpha: 0;
+      inset: 0;
+      border: 2px solid transparent;
+      -webkit-mask: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        conic-gradient(
+          from
+            calc(
+              (var(--start) + var(--spread) * 0.25 - var(--spread) * 0.5) * 1deg
+            ),
+          rgba(0, 0, 0, 0) 0deg,
+          #fff,
+          rgba(0, 0, 0, 0) calc(var(--spread) * 0.5deg)
+        );
+      mask: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        conic-gradient(
+          from
+            calc(
+              (var(--start) + var(--spread) * 0.25 - var(--spread) * 0.5) * 1deg
+            ),
+          rgba(0, 0, 0, 0) 0deg,
+          #fff,
+          rgba(0, 0, 0, 0) calc(var(--spread) * 0.5deg)
+        );
+      filter: brightness(1.5);
+      -webkit-mask-clip: padding-box, border-box;
+      mask-clip: padding-box, border-box;
+      -webkit-mask-composite: source-in, xor;
+      mask-composite: intersect;
     }
   }
 
-  @keyframes faq-pulse {
-    0% {
-      border-color: #6c5ce7;
-    }
-    100% {
-      border-color: #a29bfe;
-    }
+  .glows {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    filter: blur(calc(12 * 1px));
   }
 
   @media (max-width: 1400px) {
@@ -138,7 +207,7 @@ const FAQWrapper = styled.div`
     font-size: 2.25rem;
     font-weight: 700;
     background: linear-gradient(
-      180deg,
+      1--spreaddeg,
       #e43292 0%,
       #6635df 100%
     ); /* Gradient background */
@@ -169,7 +238,9 @@ const FAQWrapper = styled.div`
     color: #ccceef;
     font-size: 24x;
     font-weight: 400;
-    transform: rotate(180deg); /* Optional rotation effect for expanded state */
+    transform: rotate(
+      1--spreaddeg
+    ); /* Optional rotation effect for expanded state */
   }
 
   .division-bar {
@@ -232,6 +303,9 @@ const FAQWrapper = styled.div`
 
     .faq-content {
       padding: 0.8rem 1rem;
+      p {
+        font-size: 14px;
+      }
     }
   }
 `;

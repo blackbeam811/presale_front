@@ -56,7 +56,7 @@ const AboutWrapper = styled.div`
     }
 
     .about-text {
-      text-align: left;
+      text-align: justify;
     }
   }
 `;

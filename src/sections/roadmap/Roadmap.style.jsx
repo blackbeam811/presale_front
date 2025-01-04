@@ -3,16 +3,17 @@ import styled from "styled-components";
 const RoadmapWrapper = styled.div`
   /* General Container */
   .roadmap-inner {
-    background: #0f1021;
+    position: relative;
     color: #fff;
+    margin-top: 2px;
+    margin-bottom: 2px;
     padding: 2.25rem 3rem;
-    border: 1px solid #64748b;
     border-radius: 32px;
     text-align: center;
     max-width: 1200px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    position: relative;
-    transition: border-color 0.3s ease
+    transition: border-color 0.3s ease;
+    background: #0f1021;
 
     &::before {
       content: "";
@@ -22,19 +23,11 @@ const RoadmapWrapper = styled.div`
       right: -1px;
       left: -1px;
       z-index: -1;
-      margin: 0px; /* !importanté */
+      border: 1px solid transparent;
       border-radius: inherit; /* !importanté */
-      // background: linear-gradient(
-      //   103.16deg,
-      //   rgb(253, 168, 213) 0%,
-      //   rgb(192, 168, 255) 100%
-      // );
-    }
-
-    &:hover {
       border-color: #6c5ce7; /* Highlight border color */
       outline: none; /* Remove default outline */
-      animation: pulse 0.5s infinite alternate;
+      animation: pulse 1s infinite alternate;
     }
   }
 
@@ -42,8 +35,17 @@ const RoadmapWrapper = styled.div`
     0% {
       border-color: #6c5ce7;
     }
+    25% {
+      border-color: rgb(141, 92, 231);
+    }
+    50% {
+      border-color: rgb(192, 92, 231);
+    }
+    75% {
+      border-color: rgb(231, 92, 208);
+    }
     100% {
-      border-color: #a29bfe;
+      border-color: #e43292;
     }
   }
 

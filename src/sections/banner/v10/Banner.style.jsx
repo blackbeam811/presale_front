@@ -453,7 +453,7 @@ const BannerWrapper = styled.div`
 }
 
 .__presale-info-label_insoblok_3 {
-  background: linear-gradient(90deg,#12b5de -30%,#7130c3 30%,#ff3bd4 90%);
+  background: linear-gradient(90deg, #E43292 20%, #6635DF 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -574,7 +574,7 @@ const BannerWrapper = styled.div`
   }
 
   &:hover {
-    background: linear-gradient(90deg, #3b82f6, #9333ea);;
+    background: linear-gradient(90deg, #3b82f6, #9333ea);
     transform: scale(1.05);
   }
 }
@@ -652,7 +652,7 @@ const BannerWrapper = styled.div`
   }
 
   &:hover {
-    background: #7064e9;
+    background: linear-gradient(90deg, #3b82f6, #9333ea);
     border: none;
     transform: scale(1.05);
   }
@@ -665,6 +665,18 @@ const BannerWrapper = styled.div`
   background: radial-gradient(circle at var(--x,50%) var(--y,50%),#64748b,#1e293b);
   padding: 1px;
   border-radius: 1.5rem;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border: 1px solid transparent;
+    background: linear-gradient(94deg, #dd00ac 10.66%, #7130c3 53.03%, #410093 96.34%, rgba(255, 0, 238, .26) 191.41%, rgba(255, 59, 212, 0) 191.43%);
+    border-radius: inherit;
+  }
 }
 
 ._card_2wlgh_1 {
@@ -678,7 +690,10 @@ const BannerWrapper = styled.div`
   font-weight: 400;
   line-height: 1.125rem;
   text-align: right;
-  color: #7376aa;
+  background: linear-gradient(90deg, #E43292 20%, #6635DF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   cursor: pointer;
 
   &:hover {
@@ -705,7 +720,7 @@ const BannerWrapper = styled.div`
   font-size: 24px;
   font-weight: 700;
   line-height: 2rem;
-  background: linear-gradient(90deg,#12b5de -30%,#7130c3 30%,#ff3bd4 90%);
+  background: linear-gradient(90deg, #E43292 20%, #6635DF 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -815,7 +830,7 @@ const BannerWrapper = styled.div`
   position: relative;
   height: 100%;
   width: var(--frac);
-  background: linear-gradient(90deg,#9333ea,#3b82f6);
+  background: linear-gradient(90deg, #E43292 20%, #6635DF 100%);
   border-radius: 999rem
 }
 
@@ -871,7 +886,6 @@ const BannerWrapper = styled.div`
 
   .btn-primary {
     color: white;
-    background: #7064e9;
   }
 }
 

@@ -45,6 +45,7 @@ const TokenomicsWrapper = styled.div`
   .header p {
     font-size: 1.25rem;
     color: #7376aa; /* Light gray for subtitle */
+    text-align: center;
   }
 
   .content img {
@@ -175,7 +176,7 @@ const TokenomicsWrapper = styled.div`
     }
 
     .copy-content {
-      font-size: 1.5rem; /* Reduce font size for smaller screens */
+      font-size: 1.2rem; /* Reduce font size for smaller screens */
       word-wrap: break-word;
       text-align: center; /* Ensure the text is centered */
       margin-bottom: 10px; /* Add some space below */
@@ -193,7 +194,7 @@ const TokenomicsWrapper = styled.div`
     }
 
     .color-gray a {
-      font-size: 18px; /* Reduce link font size for smaller screens */
+      font-size: 14px; /* Reduce link font size for smaller screens */
     }
   }
 
@@ -205,10 +206,13 @@ const TokenomicsWrapper = styled.div`
 
     .color-gray {
       gap: 0.5rem; /* Less gap on very small screens */
+      a {
+        font-size: 12px;
+      }
     }
 
     .copy-content {
-      font-size: 1.2rem; /* Further reduce font size */
+      font-size: 1rem; /* Further reduce font size */
     }
 
     .btn-primary {

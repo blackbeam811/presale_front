@@ -11,6 +11,10 @@ const VideoSliderWrapper = styled.div`
     transition-timing-function: linear;
   }
 
+  .swiper-slide {
+    min-width: 470px;
+  }
+
   .swiper img {
     width: 100%;
   }

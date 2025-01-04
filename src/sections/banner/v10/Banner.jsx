@@ -32,7 +32,7 @@ import Roadmap from "../../roadmap/Roadmap.jsx";
 import Tokenomics from "../../tokenomics/Tokenomics.jsx";
 import FAQ from "../../faq/FAQ.jsx";
 import ForeFront from "../../forefront/ForeFront.jsx";
-import "./GridWave.js";
+import GridWaveCanvas from "../../gridwave/GridWave.jsx";
 
 library.add(fab, fas);
 
@@ -181,8 +181,8 @@ const Banner = () => {
     }
   }, [chainId, buyersToken, restricted]);
 
-  console.log("totalRaised", totalRaised);
-  console.log("currentPrice", Number(currentPrice) / 10 ** 18);
+  // console.log("totalRaised", totalRaised);
+  // console.log("currentPrice", Number(currentPrice) / 10 ** 18);
 
   return (
     <BannerWrapper>
@@ -557,9 +557,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      {/* <div class="girdwave-container">
-        <div class="grid-wave w-full h-full bg-blue-1"></div>
-      </div> */}
+      {/* <GridWaveCanvas /> */}
       <img className="divide-line" src={DIVIDE_LINE} alt="divide-line" />
       <div className="row inso-container">
         <About />

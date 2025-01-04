@@ -30,9 +30,11 @@
     "react-router-dom": "^6.26.2",
     "react-slick": "^0.30.2",
     "react-toastify": "^10.0.5",
+    "simplex-noise": "^4.0.3",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.13",
     "swiper": "^8.4.7",
+    "three": "^0.172.0",
     "viem": "^2.21.19",
     "wagmi": "^2.12.5"
   },
